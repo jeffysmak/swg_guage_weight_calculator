@@ -1,9 +1,5 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:sizer/sizer.dart';
-import 'package:swg_gauge_weight/Formula.dart';
 
 class FormulaCalculator extends StatefulWidget {
   @override
@@ -44,7 +40,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                           Divider(),
                           ListTile(
                             dense: true,
-                            leading: Icon(Icons.blur_circular, size: 20.0.sp),
+                            leading: Icon(Icons.blur_circular, size: 20.0),
                             title: TextField(
                               keyboardType: TextInputType.numberWithOptions(decimal: true),
                               controller: controllerDia,
@@ -55,7 +51,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                             ),
                             subtitle: Padding(
                               padding: const EdgeInsets.only(top: 3.0),
-                              child: Text('Enter diameter of core in inches', style: TextStyle(fontSize: 10.0.sp)),
+                              child: Text('Enter diameter of core in inches', style: TextStyle(fontSize: 10.0)),
                             ),
                           ),
                         ],
@@ -77,7 +73,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                             builder: (_, int value, __) {
                               return ListTile(
                                 dense: true,
-                                leading: Icon(Icons.poll_outlined, size: 20.0.sp),
+                                leading: Icon(Icons.poll_outlined, size: 20.0),
                                 title: DropdownButton<int>(
                                   value: value,
                                   onChanged: (int select) {
@@ -96,7 +92,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                                 ),
                                 subtitle: Padding(
                                   padding: const EdgeInsets.only(top: 3.0),
-                                  child: Text('Select number of polls', style: TextStyle(fontSize: 10.0.sp)),
+                                  child: Text('Select number of polls', style: TextStyle(fontSize: 10.0)),
                                 ),
                               );
                             },
@@ -118,7 +114,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                           const SizedBox(height: 4),
                           Divider(),
                           ListTile(
-                            leading: Icon(Icons.height, size: 20.0.sp),
+                            leading: Icon(Icons.height, size: 20.0),
                             dense: true,
                             title: TextField(
                               keyboardType: TextInputType.numberWithOptions(decimal: true),
@@ -127,7 +123,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                             ),
                             subtitle: Padding(
                               padding: const EdgeInsets.only(top: 3.0),
-                              child: Text('Enter length of core in inches', style: TextStyle(fontSize: 10.0.sp)),
+                              child: Text('Enter length of core in inches', style: TextStyle(fontSize: 10.0)),
                             ),
                           ),
                         ],
@@ -146,7 +142,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                           const SizedBox(height: 4),
                           Divider(),
                           ListTile(
-                            leading: Icon(Icons.timeline, size: 20.0.sp),
+                            leading: Icon(Icons.timeline, size: 20.0),
                             title: TextField(
                               controller: controllerVolts,
                               keyboardType: TextInputType.number,
@@ -154,7 +150,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                             ),
                             subtitle: Padding(
                               padding: const EdgeInsets.only(top: 3.0),
-                              child: Text('Enter suitable volts', style: TextStyle(fontSize: 10.0.sp)),
+                              child: Text('Enter suitable volts', style: TextStyle(fontSize: 10.0)),
                             ),
                           ),
                         ],
@@ -167,7 +163,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.all(6.0.sp),
+            margin: EdgeInsets.all(6.0),
             child: ValueListenableBuilder<double>(
               builder: (_, double answer, __) {
                 if (answer == null) {
@@ -176,7 +172,7 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                 return Text(
                   '${answer.round()}\nTurns Per Set',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16.0.sp, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                 );
               },
               valueListenable: formulaAnswer,
@@ -184,13 +180,10 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.all(12.0.sp),
-            child: RaisedButton(
+            margin: EdgeInsets.all(12.0),
+            child: ElevatedButton(
               onPressed: () {
-                if (controllerDia.text.isNotEmpty &&
-                    controllerLength.text.isNotEmpty &&
-                    controllerVolts.text.isNotEmpty &&
-                    pollsListenable.value != null) {
+                if (controllerDia.text.isNotEmpty && controllerLength.text.isNotEmpty && controllerVolts.text.isNotEmpty && pollsListenable.value != null) {
                   calculateTurns();
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -201,11 +194,11 @@ class _FormulaCalculatorState extends State<FormulaCalculator> {
                   );
                 }
               },
-              color: Colors.orange.shade800,
-              elevation: 6,
-              child: Text('CALCULATE'),
-              textColor: Colors.white,
-              padding: const EdgeInsets.all(16),
+              // color: Colors.orange.shade800,
+              // elevation: 6,
+              // child: Text('CALCULATE'),
+              // textColor: Colors.white,
+              // padding: const EdgeInsets.all(16),
             ),
           ),
         ],

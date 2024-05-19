@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer_util.dart';
-import 'package:swg_gauge_weight/ABC.dart';
 import 'package:swg_gauge_weight/RouteGenerator.dart';
 import 'package:swg_gauge_weight/providers/GaugeCalculationProvider.dart';
 
@@ -37,7 +35,7 @@ class MyApp extends StatelessWidget {
         builder: (ctx, cons) {
           return OrientationBuilder(
             builder: (ctx, orientation) {
-              SizerUtil().init(cons, orientation);
+              // SizerUtil().init(cons, orientation);
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: "PMES",

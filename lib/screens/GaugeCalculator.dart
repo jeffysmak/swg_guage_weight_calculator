@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
 import 'package:swg_gauge_weight/Statics.dart';
 import 'package:swg_gauge_weight/models/Wire.dart';
-import 'package:swg_gauge_weight/providers/GaugeCalculationProvider.dart';
 
 class GaugeCalculator extends StatefulWidget {
   @override
@@ -55,7 +52,7 @@ class _GaugeCalculatorState extends State<GaugeCalculator> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: 10.0.sp),
+                  SizedBox(height: 10.0),
                   Card(
                     elevation: 8,
                     margin: const EdgeInsets.all(16),
@@ -80,14 +77,14 @@ class _GaugeCalculatorState extends State<GaugeCalculator> {
                             ),
                             subtitle: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 4.0),
-                              child: Text('Enter total weight in grams', style: TextStyle(fontSize: 10.0.sp)),
+                              child: Text('Enter total weight in grams', style: TextStyle(fontSize: 10.0)),
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 10.0.sp),
+                  SizedBox(height: 10.0),
                   ValueListenableBuilder<int>(
                     valueListenable: totalViews,
                     builder: (_, int views, __) {
@@ -182,8 +179,8 @@ class _GaugeCalculatorState extends State<GaugeCalculator> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.all(12.0.sp),
-            child: RaisedButton(
+            margin: EdgeInsets.all(12.0),
+            child: ElevatedButton(
               onPressed: () {
                 bool validation = false;
                 selectedWiresWithQuantity.forEach((element) {
@@ -196,11 +193,11 @@ class _GaugeCalculatorState extends State<GaugeCalculator> {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Some fields are missings'), backgroundColor: Colors.redAccent));
                 }
               },
-              color: Colors.orange.shade800,
-              elevation: 6,
-              child: Text('CALCULATE'),
-              textColor: Colors.white,
-              padding: const EdgeInsets.all(16),
+              // color: Colors.orange.shade800,
+              // elevation: 6,
+              // child: Text('CALCULATE'),
+              // textColor: Colors.white,
+              // padding: const EdgeInsets.all(16),
             ),
           ),
         ],

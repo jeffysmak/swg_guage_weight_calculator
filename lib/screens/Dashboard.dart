@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -19,7 +18,7 @@ class _DashboardState extends State<Dashboard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 50.0.sp, right: 50.0.sp),
+                padding: EdgeInsets.only(left: 50.0, right: 50.0),
                 child: Hero(
                   child: Image.asset('assets/logo.png'),
                   tag: 'logo',
@@ -42,10 +41,10 @@ class _DashboardState extends State<Dashboard> {
                         onTap: () => Navigator.pushNamed(context, '/swgcalculator'),
                         trailing: Icon(Icons.arrow_forward_ios),
                         leading: Icon(Icons.timeline_sharp, size: 42),
-                        title: Text('WIRE GAUGE CALCULATOR', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0.sp)),
+                        title: Text('WIRE GAUGE CALCULATOR', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0)),
                         subtitle: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text('Calculate combination of upto 12 wire gauges', style: TextStyle(fontSize: 10.0.sp)),
+                          child: Text('Calculate combination of upto 12 wire gauges', style: TextStyle(fontSize: 10.0)),
                         ),
                       ),
                     ],
@@ -71,10 +70,10 @@ class _DashboardState extends State<Dashboard> {
                         },
                         trailing: Icon(Icons.arrow_forward_ios),
                         leading: Icon(Icons.timeline_sharp, size: 42),
-                        title: Text('FORMULA CALCULATOR', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0.sp)),
+                        title: Text('FORMULA CALCULATOR', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0)),
                         subtitle: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text('Calculate turns & current', style: TextStyle(fontSize: 10.0.sp)),
+                          child: Text('Calculate turns & current', style: TextStyle(fontSize: 10.0)),
                         ),
                       ),
                     ],
